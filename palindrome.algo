@@ -1,0 +1,17 @@
+FUNCTION is_palindrome(word:STRING) : STRING
+VAR
+    n_word : STRING;
+BEGIN
+SWITCH (word.length) DO
+        case 0 : 
+        case 1 : RETURN true BREAK;
+    END_SWITCH
+IF (word[0]:= [word.length-1] ) THEN
+    FOR i FROM 0 TO word.length-2 STEP step 1 DO
+    n_word[i] := word[i+1]
+    END_FOR
+    RETURN is_palindrome(n_word)
+ELSE 
+    RETURN false ;
+END_IF    
+END 
